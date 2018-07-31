@@ -1,0 +1,20 @@
+{
+  "apps": [
+    {
+      "name": "middle",
+      "script": "./server/app.js",
+      "cwd": "./",
+      "watch": "./server",
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "ignore_watch": [],
+      "out_file": "./logs/out.log",
+      "error_file": "./logs/error.log",
+      "max_memory_restart": "2G",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "instances": "max",
+      "autorestart": true
+    }
+  ]
+}

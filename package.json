@@ -1,0 +1,51 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "description": "a koa2 project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev_server",
+    "dev_server": "set NODE_ENV=development& nodemon --harmony -L ./server/app",
+    "start_server": "node ./server/app.js",
+    "start": "npm run start_server"
+  },
+  "author": "linzexin",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "cheerio": "^1.0.0-rc.2",
+    "co": "^4.6.0",
+    "debug": "^2.6.0",
+    "ejs": "^2.5.5",
+    "formidable": "^1.1.1",
+    "http-proxy": "^1.16.2",
+    "ioredis": "^3.2.2",
+    "koa": "^2.5.2",
+    "koa-body": "^2.5.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-logger": "^3.0.0",
+    "koa-multer": "^1.0.2",
+    "koa-mysql-session": "^0.0.2",
+    "koa-router": "^7.4.0",
+    "koa-send": "^3.2.0",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static": "^3.0.0",
+    "koa-views": "^5.2.1",
+    "koa2-cors": "^2.0.3",
+    "md5": "^2.2.1",
+    "mime-types": "^2.1.17",
+    "moment": "^2.22.2",
+    "mysql": "^2.16.0",
+    "node-uuid": "^1.4.8"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": ">= 7.0.0",
+    "npm": ">= 3.0.0"
+  }
+}
