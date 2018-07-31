@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run dev_server",
-    "dev_server": "set NODE_ENV=development& nodemon --harmony -L ./server/app",
-    "start_server": "node ./server/app.js",
+    "dev_server": "set NODE_ENV=development& nodemon --harmony -L ./server/entry",
+    "start_server": "node ./server/entry.js",
     "start": "npm run start_server"
   },
   "author": "linzexin",
@@ -42,7 +42,6 @@
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
     "nodemon": "^1.11.0"
   },
   "engines": {

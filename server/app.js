@@ -1,23 +1,17 @@
-require("babel-core/register");
-require("./middlewares/axios");
-const path = require("path");
-const Koa = require("koa");
+import path from "path";
+import Koa from "koa";
+import views from "koa-views";
+import koaStatic from "koa-static";
+import bodyParser from "koa-bodyparser";
+import koaLogger from "koa-logger";
+import session from "koa-session-minimal";
+import MysqlStore from "koa-mysql-session";
+import cors from "koa2-cors";
+import routers from "./routers/index";
+import config from "./config";
+import "./utils/createTable";
+
 const app = new Koa();
-const convert = require("koa-convert");
-const views = require("koa-views");
-const koaStatic = require("koa-static");
-const bodyParser = require("koa-bodyparser");
-const koaLogger = require("koa-logger");
-const session = require("koa-session-minimal");
-var MysqlStore = require("koa-mysql-session");
-const cors = require("koa2-cors");
-
-const routers = require("./routers/index");
-
-const config = require("./config");
-
-require("./models/createTable");
-
 // session存储配置
 const sessionMysqlConfig = {
   user: config.database.USERNAME,
@@ -65,17 +59,6 @@ if (process.env.NODE_ENV == "development") {
   );
 } else {
 }
-//获取sessionId
-app.use(async (ctx, next) => {
-  if (process.env.NODE_ENV == "development") {
-    ctx.sessionId =
-      ctx.cookies.get("sessionId") || ctx.request.header.session_id;
-  } else {
-    ctx.sessionId = ctx.cookies.get("sessionId");
-  }
-  await next();
-});
-
 // 初始化路由中间件
 app.use(routers.routes()).use(routers.allowedMethods());
 

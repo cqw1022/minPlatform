@@ -1,5 +1,5 @@
-var mysql = require("mysql");
-var config = require("../config.js");
+import mysql from "mysql";
+import config from "../config";
 
 var pool = mysql.createPool({
   host: config.database.HOST,
@@ -8,7 +8,7 @@ var pool = mysql.createPool({
   database: config.database.DATABASE
 });
 
-let query = function(sql, values) {
+export const query = function(sql, values) {
   return new Promise((resolve, reject) => {
     pool.getConnection(function(err, connection) {
       if (err) {
@@ -25,7 +25,4 @@ let query = function(sql, values) {
       }
     });
   });
-};
-module.exports = {
-  query
 };

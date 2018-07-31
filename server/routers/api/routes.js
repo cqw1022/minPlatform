@@ -1,8 +1,7 @@
 /**
  * 整合所有子路由
  */
-const router = require("koa-router")();
-// const user = require('./user');
-// router.use('/user', user.routes(), user.allowedMethods())
+import Route from "koa-router";
+const router = Route();
 
-module.exports = router;
+export default router;

@@ -1,6 +1,5 @@
 // const tools = require("./tools");
-import tools from "./tools";
-const query = tools.query;
+import { query } from "./sqlTools";
 console.log(query);
 const createTable = function(sql) {
   return query(sql, []);
@@ -12,6 +11,4 @@ const users = `create table if not exists users(
  PRIMARY KEY ( id )
 );`;
 createTable(users);
-module.exports = {};
-// export default {};
-// export default {};
+export default {};
